@@ -1,0 +1,102 @@
+{% extends 'homeapp/base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'homeapp/design.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h1 class='profile-wrapper mb-4'>Resume</h1>
+    <div class='row my-3'>
+        <div class='col-md-3'>
+            {% for i in intro %}
+            <div class='card card-body profile-wrapper'>
+                <img id='profile-pic' src='{{ i.image.url }}' alt="Error">
+                <br>
+                <h4>{{ i.name }}</h4>
+                <p>{{ i.title }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class='col-md-9'>
+            <div class='card card-body about-me'>
+                <h4>About Me</h4>
+                <hr>
+                {% for a in aboutme %}
+                    <p>{{ a.a1 }}</p>
+                    <p>{{ a.a2 }}</p>
+                    <p>{{ a.a3 }}</p>
+
+                    <small>
+                        <a href="{{ a.a4.url }}" target='_blank'>Click Here To Download My Resume</a>
+                    </small>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class='col-md-6'>
+            <div class='card card-body'>
+                <h4>My Skills</h4>
+                <hr>
+                {% for s in myskills %}
+                <ul>
+                    <li>{{ s.s1 }}</li>
+                    <li>{{ s.s2 }}</li>
+                    <li>{{ s.s3 }}</li>
+                    <li>{{ s.s4 }}</li>
+                    <li>{{ s.s5 }}</li>
+                    <li>{{ s.s6 }}</li>
+                    <li>{{ s.s7 }}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+        <div class='col-md-6'>
+            <div class='card card-body'>
+                <h4>Projects</h4>
+                <hr>
+                {% for p in myprojects %}
+                <ul>
+                    <li>{{ p.p1 }}</li>
+                    <small><a href=" https://github.com/mak-19/DjangoBlogWebsite.git" target="_blank">Github
+                            Repository Link</a></small>
+                    <li>{{ p.p2 }}</li>
+                    <small><a href=" https://github.com/mak-19/DjangoBlogWebsite.git" target="_blank">Github
+                            Repository Link</a></small>
+                    <li>{{ p.p3 }}</li>
+                    <li>{{ p.p4 }}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class='row my-3'>
+        <div class='col-md-6'>
+            <div class='card card-body'>
+                <h4>Tool Competence</h4>
+                <hr>
+                <ul>
+                    <li>Hands-on on Linux Operating System.</li>
+                    <li>Hands-on on Visual Studio Code IDE.</li>
+                    <hr>
+                    <li>Achievedd 4 Badges in Python Programming on HackerRank.</li>
+                </ul>
+            </div>
+        </div>
+        <div class='col-md-6'>
+            <div class='card card-body'>
+                <h4>Additional Information</h4>
+                <hr>
+                <p><strong>Date of Birth: </strong>19-06-1995</p>
+                <p><strong>Father's Name: </strong>Sushil Kumar Sharma</p>
+                <p><strong>Permanent Address: </strong>A-122 Awas Viaks Colony, Unnao.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
