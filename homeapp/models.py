@@ -20,20 +20,14 @@ class Intro(models.Model):
             img.thumbnail(output_size)
             img.save(self.image.path)
 
+class AboutMe(models.Model):
+    name = models.TextField()
+
 class Resume(models.Model):
-    a1 = models.TextField()
-    a2 = models.TextField()
-    a3 = models.TextField()
-    a4 = models.FileField(default='resume.pdf', upload_to='pdf')
+    name = models.FileField(default='resume.pdf', upload_to='pdf')
     
 class MySkill(models.Model):    
-    s1 = models.CharField(max_length=50)
-    s2 = models.CharField(max_length=50)
-    s3 = models.CharField(max_length=50)
-    s4 = models.CharField(max_length=50)
-    s5 = models.CharField(max_length=50)
-    s6 = models.CharField(max_length=50)
-    s7 = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
 
 class MyProject(models.Model):
     p1 = models.TextField()

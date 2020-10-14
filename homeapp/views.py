@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Intro, Resume, MySkill, MyProject
+from .models import Intro, Resume, MySkill, MyProject, AboutMe
 
 # intro = [
 #     {
@@ -25,9 +25,10 @@ def home(request):
     context = {
         # 'intro':intro,
         'intro':Intro.objects.all(),
-        'aboutme':Resume.objects.all(),
+        'resume':Resume.objects.all(),
         'myskills':MySkill.objects.all(),
-        'myprojects':MyProject.objects.all()
+        'myprojects':MyProject.objects.all(),
+        'aboutme':AboutMe.objects.all()
     }
     return render(request,'homeapp/home.html', context)
     

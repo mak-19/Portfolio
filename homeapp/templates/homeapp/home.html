@@ -24,12 +24,12 @@
                 <h4>About Me</h4>
                 <hr>
                 {% for a in aboutme %}
-                    <p>{{ a.a1 }}</p>
-                    <p>{{ a.a2 }}</p>
-                    <p>{{ a.a3 }}</p>
+                    <p>{{ a.name }}</p>
+                {% endfor %}
 
+                {% for i in resume %}
                     <small>
-                        <a href="{{ a.a4.url }}" target='_blank'>Click Here To Download My Resume</a>
+                        <a href="{{ i.name.url }}" target='_blank'>Click Here To Download My Resume</a>
                     </small>
                 {% endfor %}
             </div>
@@ -41,11 +41,11 @@
             <div class='card card-body'>
                 <h4>My Skills</h4>
                 <hr>
-                {% for s in myskills %}
                 <ul>
-                    <li>{{ s.s1 }}</li>
+                    {% for s in myskills %}
+                        <li>{{ s.name }}</li>
+                    {% endfor %}
                 </ul>
-                {% endfor %}
             </div>
         </div>
         <div class='col-md-6'>
